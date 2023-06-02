@@ -31,7 +31,7 @@ public class CustomerController {
 
     @GetMapping("/pet/{petId}")
     public CustomerDTO getOwnerByPet(@PathVariable long petId) {
-        return convertToCustomerDTO(customerService.loadEagerByPetId(petId));
+        return convertToCustomerDTO(customerService.loadByPetId(petId));
     }
 
     private Customer convertToCustomer(CustomerDTO customerDTO) {

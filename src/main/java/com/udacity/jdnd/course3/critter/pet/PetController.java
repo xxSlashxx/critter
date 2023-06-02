@@ -27,7 +27,7 @@ public class PetController {
     @PostMapping
     public PetDTO savePet(@RequestBody PetDTO petDTO) {
         Pet pet = convertToPet(petDTO);
-        Customer customer = customerService.loadEagerById(petDTO.getOwnerId());
+        Customer customer = customerService.loadById(petDTO.getOwnerId());
         customer.getPets().add(pet);
         pet.setCustomer(customer);
         return convertToPetDTO(petService.save(pet));
