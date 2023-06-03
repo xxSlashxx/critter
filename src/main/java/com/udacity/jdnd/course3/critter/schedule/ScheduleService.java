@@ -4,9 +4,11 @@ import com.udacity.jdnd.course3.critter.employee.Employee;
 import com.udacity.jdnd.course3.critter.pet.Pet;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class ScheduleService {
 
     private final ScheduleRepository scheduleRepository;

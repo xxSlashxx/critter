@@ -3,9 +3,11 @@ package com.udacity.jdnd.course3.critter.pet;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class PetService {
 
     private final PetRepository petRepository;
